@@ -1,9 +1,9 @@
-
 import { ArrowRight, CheckCircle, TrendingDown, Zap, Shield, Users, Calendar, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { SpiralDesign } from "@/components/SpiralDesign";
 import { FloatingShapes } from "@/components/FloatingShapes";
+import { Link } from "react-router-dom";
 
 const Merchants = () => {
   return (
@@ -25,7 +25,9 @@ const Merchants = () => {
               </div>
             </div>
             <nav className="hidden md:flex items-center space-x-8">
-              <a href="/" className="text-sm font-medium hover:text-primary transition-colors duration-200">Home</a>
+              <Link to="/" className="text-sm font-medium hover:text-primary transition-colors duration-200 px-4 py-2 rounded-lg bg-primary/10 border border-primary/20">
+                For Customers
+              </Link>
               <a href="#benefits" className="text-sm font-medium hover:text-primary transition-colors duration-200">Benefits</a>
               <a href="#pricing" className="text-sm font-medium hover:text-primary transition-colors duration-200">Pricing</a>
               <a href="#integration" className="text-sm font-medium hover:text-primary transition-colors duration-200">Integration</a>

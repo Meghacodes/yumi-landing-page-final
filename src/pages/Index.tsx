@@ -1,9 +1,9 @@
-
 import { ArrowRight, CheckCircle, Shield, Zap, Users, TrendingUp, Phone, Calendar, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { SpiralDesign } from "@/components/SpiralDesign";
 import { FloatingShapes } from "@/components/FloatingShapes";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   return (
@@ -28,7 +28,9 @@ const Index = () => {
               <a href="#how-it-works" className="text-sm font-medium hover:text-primary transition-colors duration-200">How it Works</a>
               <a href="#benefits" className="text-sm font-medium hover:text-primary transition-colors duration-200">Benefits</a>
               <a href="#team" className="text-sm font-medium hover:text-primary transition-colors duration-200">Team</a>
-              <a href="/merchants" className="text-sm font-medium hover:text-primary transition-colors duration-200">For Merchants</a>
+              <Link to="/merchants" className="text-sm font-medium hover:text-primary transition-colors duration-200 px-4 py-2 rounded-lg bg-primary/10 border border-primary/20">
+                For Merchants
+              </Link>
               <Button size="sm" className="button-primary text-primary-foreground font-semibold">
                 Get Started
               </Button>
@@ -273,7 +275,7 @@ const Index = () => {
               <a href="#" className="text-secondary hover:text-primary transition-colors duration-200 text-body font-medium">Privacy</a>
               <a href="#" className="text-secondary hover:text-primary transition-colors duration-200 text-body font-medium">Terms</a>
               <a href="#" className="text-secondary hover:text-primary transition-colors duration-200 text-body font-medium">Contact</a>
-              <a href="/merchants" className="text-secondary hover:text-primary transition-colors duration-200 text-body font-medium">Merchants</a>
+              <Link to="/merchants" className="text-secondary hover:text-primary transition-colors duration-200 text-body font-medium">Merchants</Link>
             </div>
           </div>
           <div className="mt-8 pt-8 border-t border-border text-center text-secondary">
