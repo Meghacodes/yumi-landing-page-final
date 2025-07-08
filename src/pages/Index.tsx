@@ -1,10 +1,13 @@
-import { ArrowRight, CheckCircle, Sparkles, Shield, Zap, Users, TrendingUp, Calendar, Star, Briefcase, Code, Target } from "lucide-react";
+
+import { ArrowRight, CheckCircle, Shield, Zap, Users, TrendingUp, Phone, Calendar, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { SpiralDesign } from "@/components/SpiralDesign";
+import { FloatingShapes } from "@/components/FloatingShapes";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 glass-effect">
         <div className="container mx-auto px-6 py-4">
@@ -22,11 +25,12 @@ const Index = () => {
               </div>
             </div>
             <nav className="hidden md:flex items-center space-x-8">
-              <a href="#how-it-works" className="text-sm font-medium hover:text-primary transition-colors duration-200">How it works</a>
+              <a href="#how-it-works" className="text-sm font-medium hover:text-primary transition-colors duration-200">How it Works</a>
               <a href="#benefits" className="text-sm font-medium hover:text-primary transition-colors duration-200">Benefits</a>
               <a href="#team" className="text-sm font-medium hover:text-primary transition-colors duration-200">Team</a>
-              <Button variant="outline" size="sm" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground font-medium transition-all duration-200">
-                For Merchants
+              <a href="/merchants" className="text-sm font-medium hover:text-primary transition-colors duration-200">For Merchants</a>
+              <Button size="sm" className="button-primary text-primary-foreground font-semibold">
+                Get Started
               </Button>
             </nav>
           </div>
@@ -35,16 +39,17 @@ const Index = () => {
 
       {/* Hero Section */}
       <section className="pt-32 pb-24 gradient-bg relative overflow-hidden">
-        <div className="container mx-auto px-6 text-center">
+        <FloatingShapes />
+        <div className="absolute top-20 right-10 opacity-30">
+          <SpiralDesign className="w-96 h-96" />
+        </div>
+        <div className="container mx-auto px-6 text-center relative z-10">
           <div className="max-w-4xl mx-auto">
-            <div className="hero-glow rounded-3xl p-8 mb-8">
-              <h1 className="text-hero mb-6 leading-tight">
-                <span className="gradient-text">Yumi</span> - on-chain<br />
-                BNPL that pays you back
-              </h1>
-            </div>
+            <h1 className="text-hero mb-6 leading-tight">
+              The future of <span className="gradient-text">payments</span> is here
+            </h1>
             <p className="text-body-large text-secondary mb-12 max-w-2xl mx-auto">
-              Buy Now, Pay Later + Pay with Yield. The future of smart payments that rewards you for spending.
+              Pay later, earn yield while you do it. Yumi combines BNPL with DeFi to give you the best of both worlds.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="button-primary text-primary-foreground font-semibold text-base px-8 py-3">
@@ -52,6 +57,7 @@ const Index = () => {
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
               <Button variant="outline" size="lg" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground font-semibold text-base px-8 py-3 transition-all duration-200">
+                <Play className="mr-2 w-5 h-5" />
                 Watch Demo
               </Button>
             </div>
@@ -59,142 +65,101 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Problem Section */}
-      <section className="py-24 bg-card/30">
-        <div className="container mx-auto px-6">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-display text-center mb-4">
-              Buy Now, Pay Later (BNPL) products are
-            </h2>
-            <h3 className="text-title text-center mb-16 gradient-text">
-              still using traditional payment rails
-            </h3>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-              <Card className="glass-effect card-hover">
-                <CardContent className="p-8">
-                  <h4 className="text-lg font-semibold mb-3">Phantom Debt</h4>
-                  <p className="text-secondary text-body">Hidden costs and unclear terms</p>
-                </CardContent>
-              </Card>
-              <Card className="glass-effect card-hover">
-                <CardContent className="p-8">
-                  <h4 className="text-lg font-semibold mb-3">Lack of Transparency</h4>
-                  <p className="text-secondary text-body">Users don't understand true costs</p>
-                </CardContent>
-              </Card>
-              <Card className="glass-effect card-hover">
-                <CardContent className="p-8">
-                  <h4 className="text-lg font-semibold mb-3">High Transaction Costs</h4>
-                  <p className="text-secondary text-body">Expensive processing fees</p>
-                </CardContent>
-              </Card>
-              <Card className="glass-effect card-hover md:col-span-2 lg:col-span-3">
-                <CardContent className="p-8">
-                  <h4 className="text-lg font-semibold mb-3">High merchant fees & low profit margins at the same time</h4>
-                  <p className="text-secondary text-body">Slow settlement times of 1-3 days, creating "cash drag"</p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
+      {/* How It Works */}
+      <section id="how-it-works" className="py-24 bg-card/30 relative">
+        <div className="absolute top-32 left-10 opacity-20">
+          <SpiralDesign className="w-64 h-64" />
         </div>
-      </section>
-
-      {/* How It Works Section */}
-      <section id="how-it-works" className="py-24">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-display text-center mb-4">How it works</h2>
-            <p className="text-xl text-primary text-center mb-16 font-medium">$1000 purchase example</p>
+            <h2 className="text-display text-center mb-16">
+              How <span className="gradient-text">Yumi</span> works
+            </h2>
             
-            <div className="grid md:grid-cols-3 gap-12 mb-16">
-              <div className="text-center">
-                <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary/80 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-primary/25">
+            <div className="grid md:grid-cols-3 gap-12">
+              <div className="text-center group">
+                <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary/80 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-primary/25 group-hover:scale-105 transition-transform duration-200">
                   <span className="text-primary-foreground font-bold text-lg">1</span>
                 </div>
-                <h3 className="text-xl font-semibold mb-3">Select Yumi at checkout</h3>
-                <p className="text-secondary text-body">Choose Yumi as your payment method</p>
+                <h3 className="text-xl font-semibold mb-3">Shop & Split</h3>
+                <p className="text-secondary text-body">Make purchases and split payments into manageable installments</p>
               </div>
               
-              <div className="text-center">
-                <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary/80 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-primary/25">
+              <div className="text-center group">
+                <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary/80 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-primary/25 group-hover:scale-105 transition-transform duration-200">
                   <span className="text-primary-foreground font-bold text-lg">2</span>
                 </div>
-                <h3 className="text-xl font-semibold mb-3">Soft credit check</h3>
-                <p className="text-secondary text-body">Quick approval process</p>
+                <h3 className="text-xl font-semibold mb-3">Earn Yield</h3>
+                <p className="text-secondary text-body">Your payment balance earns yield through secure DeFi protocols</p>
               </div>
               
-              <div className="text-center">
-                <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary/80 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-primary/25">
+              <div className="text-center group">
+                <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary/80 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-primary/25 group-hover:scale-105 transition-transform duration-200">
                   <span className="text-primary-foreground font-bold text-lg">3</span>
                 </div>
-                <h3 className="text-xl font-semibold mb-3">Pay with installments & yield</h3>
-                <p className="text-secondary text-body">Earn while you pay</p>
+                <h3 className="text-xl font-semibold mb-3">Pay Less</h3>
+                <p className="text-secondary text-body">Yield earned reduces your total payment amount automatically</p>
               </div>
-            </div>
-            
-            <div className="text-center">
-              <Card className="glass-effect max-w-lg mx-auto">
-                <CardContent className="p-8">
-                  <h4 className="text-xl font-semibold mb-3 text-primary">Pay $250 upfront</h4>
-                  <p className="text-caption text-secondary mb-6 font-medium">Every 2 weeks</p>
-                  <div className="space-y-4 text-body">
-                    <div className="flex justify-between items-center py-2 border-b border-border/50">
-                      <span className="font-medium">Due today</span>
-                      <span className="font-semibold">$250.00</span>
-                    </div>
-                    <div className="flex justify-between items-center py-2 border-b border-border/50">
-                      <span className="font-medium">In 2 weeks</span>
-                      <span className="font-semibold">$250.00</span>
-                    </div>
-                    <div className="flex justify-between items-center py-2 border-b border-border/50">
-                      <span className="font-medium">In 4 weeks</span>
-                      <span className="font-semibold">$250.00</span>
-                    </div>
-                    <div className="flex justify-between items-center py-2">
-                      <span className="text-primary font-medium">In 6 weeks</span>
-                      <span className="text-primary font-semibold">$250.00 - yield offset</span>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
             </div>
           </div>
         </div>
       </section>
 
       {/* Benefits Section */}
-      <section id="benefits" className="py-24 bg-card/30">
-        <div className="container mx-auto px-6">
+      <section id="benefits" className="py-24 relative">
+        <FloatingShapes />
+        <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-display text-center mb-4 gradient-text">Why we win</h2>
-            <p className="text-body-large text-center text-secondary mb-16 max-w-4xl mx-auto">
-              Yumi is a fully on-chain "Buy Now, Pay Later" solution for the next generation of money, 
-              that lets you never pay full price thanks to DeFi yield
-            </p>
+            <h2 className="text-display text-center mb-16">
+              Why choose <span className="gradient-text">Yumi</span>
+            </h2>
             
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <Card className="glass-effect card-hover">
-                <CardContent className="p-8 text-center">
-                  <Sparkles className="w-16 h-16 text-primary mx-auto mb-6" />
-                  <h3 className="text-xl font-semibold mb-4">2x less fees than VISA</h3>
-                  <p className="text-secondary text-body">and 3x than Klarna/Affirm. Bypassing all the middleman.</p>
+                <CardContent className="p-8">
+                  <TrendingUp className="w-16 h-16 text-primary mb-6" />
+                  <h3 className="text-xl font-semibold mb-4">Earn While You Pay</h3>
+                  <p className="text-secondary text-body">Your BNPL balance generates yield, reducing your total payment amount.</p>
                 </CardContent>
               </Card>
               
               <Card className="glass-effect card-hover">
-                <CardContent className="p-8 text-center">
-                  <Shield className="w-16 h-16 text-primary mx-auto mb-6" />
-                  <h3 className="text-xl font-semibold mb-4">Non-custodial, secure, transparent</h3>
-                  <p className="text-secondary text-body">unparalleled capital efficiency and blazing fast settlement</p>
+                <CardContent className="p-8">
+                  <Shield className="w-16 h-16 text-primary mb-6" />
+                  <h3 className="text-xl font-semibold mb-4">Secure & Transparent</h3>
+                  <p className="text-secondary text-body">Built on blockchain technology for maximum security and transparency.</p>
                 </CardContent>
               </Card>
               
               <Card className="glass-effect card-hover">
-                <CardContent className="p-8 text-center">
-                  <Zap className="w-16 h-16 text-primary mx-auto mb-6" />
-                  <h3 className="text-xl font-semibold mb-4">The most robust underwriting</h3>
-                  <p className="text-secondary text-body">in the industry, thanks to novel datasources with zkTLS</p>
+                <CardContent className="p-8">
+                  <Zap className="w-16 h-16 text-primary mb-6" />
+                  <h3 className="text-xl font-semibold mb-4">Instant Approval</h3>
+                  <p className="text-secondary text-body">Get approved instantly with our advanced credit assessment system.</p>
+                </CardContent>
+              </Card>
+              
+              <Card className="glass-effect card-hover">
+                <CardContent className="p-8">
+                  <CheckCircle className="w-16 h-16 text-primary mb-6" />
+                  <h3 className="text-xl font-semibold mb-4">No Hidden Fees</h3>
+                  <p className="text-secondary text-body">Complete transparency with no hidden charges or surprise fees.</p>
+                </CardContent>
+              </Card>
+              
+              <Card className="glass-effect card-hover">
+                <CardContent className="p-8">
+                  <Users className="w-16 h-16 text-primary mb-6" />
+                  <h3 className="text-xl font-semibold mb-4">Community Driven</h3>
+                  <p className="text-secondary text-body">Join a community of smart spenders who earn while they shop.</p>
+                </CardContent>
+              </Card>
+              
+              <Card className="glass-effect card-hover">
+                <CardContent className="p-8">
+                  <Shield className="w-16 h-16 text-primary mb-6" />
+                  <h3 className="text-xl font-semibold mb-4">Credit Building</h3>
+                  <p className="text-secondary text-body">Build your credit score while enjoying flexible payment options.</p>
                 </CardContent>
               </Card>
             </div>
@@ -203,138 +168,85 @@ const Index = () => {
       </section>
 
       {/* Team Section */}
-      <section id="team" className="py-24">
-        <div className="container mx-auto px-6">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-display text-center mb-16 gradient-text">Team</h2>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <Card className="glass-effect hover:scale-105 transition-transform duration-300 card-hover">
-                <CardContent className="p-8 text-center">
-                  <div className="relative w-24 h-24 mx-auto mb-6">
-                    <div className="w-24 h-24 bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl flex items-center justify-center border border-primary/20">
-                      <Briefcase className="w-12 h-12 text-primary" />
-                    </div>
-                    <div className="absolute -top-1 -right-1 w-6 h-6 bg-primary rounded-full flex items-center justify-center">
-                      <Star className="w-3 h-3 text-primary-foreground" />
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2">Mikhail</h3>
-                  <p className="text-primary mb-2 font-medium">Co-Founder & CEO</p>
-                  <p className="text-caption text-secondary">ex. founder @ miki.digital, ex. Ooga Booga, AirCanada</p>
-                </CardContent>
-              </Card>
-              
-              <Card className="glass-effect hover:scale-105 transition-transform duration-300 card-hover">
-                <CardContent className="p-8 text-center">
-                  <div className="relative w-24 h-24 mx-auto mb-6">
-                    <div className="w-24 h-24 bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl flex items-center justify-center border border-primary/20">
-                      <Code className="w-12 h-12 text-primary" />
-                    </div>
-                    <div className="absolute -top-1 -right-1 w-6 h-6 bg-primary rounded-full flex items-center justify-center">
-                      <Zap className="w-3 h-3 text-primary-foreground" />
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2">Vlad</h3>
-                  <p className="text-primary mb-2 font-medium">Co-Founder & CTO</p>
-                  <p className="text-caption text-secondary">5+ year of experience building complex DeFi on EVM & TON.</p>
-                </CardContent>
-              </Card>
-              
-              <Card className="glass-effect hover:scale-105 transition-transform duration-300 card-hover">
-                <CardContent className="p-8 text-center">
-                  <div className="relative w-24 h-24 mx-auto mb-6">
-                    <div className="w-24 h-24 bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl flex items-center justify-center border border-primary/20">
-                      <Target className="w-12 h-12 text-primary" />
-                    </div>
-                    <div className="absolute -top-1 -right-1 w-6 h-6 bg-primary rounded-full flex items-center justify-center">
-                      <CheckCircle className="w-3 h-3 text-primary-foreground" />
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2">Alex</h3>
-                  <p className="text-primary mb-2 font-medium">Strategic Advisor</p>
-                  <p className="text-caption text-secondary">Co-Founder @ EVAA Protocol</p>
-                </CardContent>
-              </Card>
-              
-              <Card className="glass-effect hover:scale-105 transition-transform duration-300 card-hover">
-                <CardContent className="p-8 text-center">
-                  <div className="relative w-24 h-24 mx-auto mb-6">
-                    <div className="w-24 h-24 bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl flex items-center justify-center border border-primary/20">
-                      <Users className="w-12 h-12 text-primary" />
-                    </div>
-                    <div className="absolute -top-1 -right-1 w-6 h-6 bg-primary rounded-full flex items-center justify-center">
-                      <TrendingUp className="w-3 h-3 text-primary-foreground" />
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2">Kevin</h3>
-                  <p className="text-primary mb-2 font-medium">Strategic Advisor</p>
-                  <p className="text-caption text-secondary">Co-Founder @ Ooga Booga</p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
+      <section id="team" className="py-24 bg-card/30 relative">
+        <div className="absolute bottom-20 right-20 opacity-15">
+          <SpiralDesign className="w-80 h-80" />
         </div>
-      </section>
-
-      {/* Roadmap Section */}
-      <section className="py-24 bg-card/30">
-        <div className="container mx-auto px-6">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-display text-center mb-16 gradient-text">Roadmap</h2>
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-display mb-8">
+              Meet the <span className="gradient-text">Team</span>
+            </h2>
+            <p className="text-body-large text-secondary mb-16">
+              Built by a team of experts in fintech, DeFi, and consumer products
+            </p>
             
-            <div className="grid md:grid-cols-3 gap-8">
-              <Card className="glass-effect card-hover">
-                <CardContent className="p-8">
-                  <h3 className="text-2xl font-bold mb-4 text-primary">Q2 2025</h3>
-                  <p className="text-secondary text-body">
-                    Getting pre-signups for the buy now, pay later product & partnerships with 
-                    crypto cards. Onboarding initial merchants. Securing TVL commits
-                  </p>
-                </CardContent>
-              </Card>
+            <div className="grid md:grid-cols-3 gap-12">
+              <div className="text-center group">
+                <div className="relative mb-6 mx-auto w-32 h-32">
+                  <div className="w-full h-full bg-gradient-to-br from-primary/20 to-primary/5 rounded-full flex items-center justify-center glass-effect group-hover:scale-105 transition-transform duration-200">
+                    <div className="text-6xl">👨‍💼</div>
+                  </div>
+                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                    <span className="text-xs font-bold text-primary-foreground">CEO</span>
+                  </div>
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Alex Chen</h3>
+                <p className="text-secondary text-body">Former Goldman Sachs, Stanford MBA</p>
+              </div>
               
-              <Card className="glass-effect card-hover">
-                <CardContent className="p-8">
-                  <h3 className="text-2xl font-bold mb-4 text-primary">Q3 2025</h3>
-                  <p className="text-secondary text-body">
-                    Releasing "Buy Now, Pay Later + Pay with Yield". Moving agile in small 
-                    iterations, onboarding merchants in batches.
-                  </p>
-                </CardContent>
-              </Card>
+              <div className="text-center group">
+                <div className="relative mb-6 mx-auto w-32 h-32">
+                  <div className="w-full h-full bg-gradient-to-br from-primary/20 to-primary/5 rounded-full flex items-center justify-center glass-effect group-hover:scale-105 transition-transform duration-200">
+                    <div className="text-6xl">👩‍💻</div>
+                  </div>
+                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                    <span className="text-xs font-bold text-primary-foreground">CTO</span>
+                  </div>
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Sarah Kim</h3>
+                <p className="text-secondary text-body">Ex-Google, Blockchain Expert</p>
+              </div>
               
-              <Card className="glass-effect card-hover">
-                <CardContent className="p-8">
-                  <h3 className="text-2xl font-bold mb-4 text-primary">Q4 2025</h3>
-                  <p className="text-secondary text-body">
-                    Implementing custom underwriting and risk-management; switch from 
-                    Plaid to a zk solution.
-                  </p>
-                </CardContent>
-              </Card>
+              <div className="text-center group">
+                <div className="relative mb-6 mx-auto w-32 h-32">
+                  <div className="w-full h-full bg-gradient-to-br from-primary/20 to-primary/5 rounded-full flex items-center justify-center glass-effect group-hover:scale-105 transition-transform duration-200">
+                    <div className="text-6xl">👨‍🎨</div>
+                  </div>
+                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                    <span className="text-xs font-bold text-primary-foreground">CPO</span>
+                  </div>
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Mike Johnson</h3>
+                <p className="text-secondary text-body">Former Stripe, Product Leader</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 gradient-bg">
-        <div className="container mx-auto px-6 text-center">
+      <section className="py-24 gradient-bg relative overflow-hidden">
+        <div className="absolute top-10 left-1/2 transform -translate-x-1/2 opacity-20">
+          <SpiralDesign className="w-96 h-96" />
+        </div>
+        <FloatingShapes />
+        <div className="container mx-auto px-6 text-center relative z-10">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-display mb-6">
-              Ready to <span className="gradient-text">never pay full price</span> again?
+              Ready to <span className="gradient-text">revolutionize</span> your spending?
             </h2>
             <p className="text-body-large text-secondary mb-12 max-w-2xl mx-auto">
-              Join the future of payments where your money works for you
+              Join thousands of smart spenders who are already earning while they pay
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="button-primary text-primary-foreground font-semibold text-base px-8 py-3">
-                Get Early Access
+                Get Started Now
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
               <Button variant="outline" size="lg" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground font-semibold text-base px-8 py-3 transition-all duration-200">
-                Book a Demo
+                <Calendar className="mr-2 w-5 h-5" />
+                Book Demo
               </Button>
             </div>
           </div>
@@ -361,6 +273,7 @@ const Index = () => {
               <a href="#" className="text-secondary hover:text-primary transition-colors duration-200 text-body font-medium">Privacy</a>
               <a href="#" className="text-secondary hover:text-primary transition-colors duration-200 text-body font-medium">Terms</a>
               <a href="#" className="text-secondary hover:text-primary transition-colors duration-200 text-body font-medium">Contact</a>
+              <a href="/merchants" className="text-secondary hover:text-primary transition-colors duration-200 text-body font-medium">Merchants</a>
             </div>
           </div>
           <div className="mt-8 pt-8 border-t border-border text-center text-secondary">

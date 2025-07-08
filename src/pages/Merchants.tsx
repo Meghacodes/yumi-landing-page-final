@@ -2,6 +2,8 @@
 import { ArrowRight, CheckCircle, TrendingDown, Zap, Shield, Users, Calendar, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { SpiralDesign } from "@/components/SpiralDesign";
+import { FloatingShapes } from "@/components/FloatingShapes";
 
 const Merchants = () => {
   return (
@@ -23,6 +25,7 @@ const Merchants = () => {
               </div>
             </div>
             <nav className="hidden md:flex items-center space-x-8">
+              <a href="/" className="text-sm font-medium hover:text-primary transition-colors duration-200">Home</a>
               <a href="#benefits" className="text-sm font-medium hover:text-primary transition-colors duration-200">Benefits</a>
               <a href="#pricing" className="text-sm font-medium hover:text-primary transition-colors duration-200">Pricing</a>
               <a href="#integration" className="text-sm font-medium hover:text-primary transition-colors duration-200">Integration</a>
@@ -36,7 +39,11 @@ const Merchants = () => {
 
       {/* Hero Section */}
       <section className="pt-32 pb-24 gradient-bg relative overflow-hidden">
-        <div className="container mx-auto px-6 text-center">
+        <FloatingShapes />
+        <div className="absolute top-20 right-10 opacity-25 rotate-45">
+          <SpiralDesign className="w-96 h-96" />
+        </div>
+        <div className="container mx-auto px-6 text-center relative z-10">
           <div className="max-w-4xl mx-auto">
             <h1 className="text-hero mb-6 leading-tight">
               Replace your BNPL with <span className="gradient-text">Yumi</span>
@@ -58,8 +65,12 @@ const Merchants = () => {
       </section>
 
       {/* Benefits Section */}
-      <section id="benefits" className="py-24">
-        <div className="container mx-auto px-6">
+      <section id="benefits" className="py-24 relative">
+        <div className="absolute top-32 left-10 opacity-15 -rotate-12">
+          <SpiralDesign className="w-72 h-72" />
+        </div>
+        <FloatingShapes />
+        <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-display text-center mb-16">
               Why merchants choose <span className="gradient-text">Yumi</span>
@@ -119,8 +130,11 @@ const Merchants = () => {
       </section>
 
       {/* Comparison Section */}
-      <section id="pricing" className="py-24 bg-card/30">
-        <div className="container mx-auto px-6">
+      <section id="pricing" className="py-24 bg-card/30 relative">
+        <div className="absolute bottom-20 right-20 opacity-20 rotate-90">
+          <SpiralDesign className="w-64 h-64" />
+        </div>
+        <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-display text-center mb-16">
               <span className="gradient-text">Yumi</span> vs Traditional BNPL
@@ -188,8 +202,12 @@ const Merchants = () => {
       </section>
 
       {/* Integration Section */}
-      <section id="integration" className="py-24">
-        <div className="container mx-auto px-6">
+      <section id="integration" className="py-24 relative">
+        <div className="absolute top-20 left-1/2 transform -translate-x-1/2 opacity-10">
+          <SpiralDesign className="w-80 h-80" />
+        </div>
+        <FloatingShapes />
+        <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-display mb-8">
               Easy <span className="gradient-text">Integration</span>
@@ -199,24 +217,24 @@ const Merchants = () => {
             </p>
             
             <div className="grid md:grid-cols-3 gap-12 mb-16">
-              <div className="text-center">
-                <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary/80 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-primary/25">
+              <div className="text-center group">
+                <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary/80 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-primary/25 group-hover:scale-105 transition-transform duration-200">
                   <span className="text-primary-foreground font-bold text-lg">1</span>
                 </div>
                 <h3 className="text-xl font-semibold mb-3">Book a Call</h3>
                 <p className="text-secondary text-body">Schedule a consultation with our team</p>
               </div>
               
-              <div className="text-center">
-                <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary/80 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-primary/25">
+              <div className="text-center group">
+                <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary/80 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-primary/25 group-hover:scale-105 transition-transform duration-200">
                   <span className="text-primary-foreground font-bold text-lg">2</span>
                 </div>
                 <h3 className="text-xl font-semibold mb-3">Quick Setup</h3>
                 <p className="text-secondary text-body">We handle the technical integration</p>
               </div>
               
-              <div className="text-center">
-                <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary/80 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-primary/25">
+              <div className="text-center group">
+                <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary/80 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-primary/25 group-hover:scale-105 transition-transform duration-200">
                   <span className="text-primary-foreground font-bold text-lg">3</span>
                 </div>
                 <h3 className="text-xl font-semibold mb-3">Go Live</h3>
@@ -228,8 +246,15 @@ const Merchants = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 gradient-bg">
-        <div className="container mx-auto px-6 text-center">
+      <section className="py-24 gradient-bg relative overflow-hidden">
+        <div className="absolute top-10 left-20 opacity-15">
+          <SpiralDesign className="w-96 h-96" />
+        </div>
+        <div className="absolute bottom-10 right-20 opacity-15 rotate-180">
+          <SpiralDesign className="w-64 h-64" />
+        </div>
+        <FloatingShapes />
+        <div className="container mx-auto px-6 text-center relative z-10">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-display mb-6">
               Ready to <span className="gradient-text">transform</span> your payments?
