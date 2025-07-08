@@ -2,7 +2,7 @@
 
 Welcome to the official landing page for **Yumi Finance** — the first fully on-chain **Buy Now, Pay Later (BNPL)** solution that not only lets you split payments, but actually **rewards you** for it.
 
-🔗 **Live Preview**: [yumi.finance](https://lovable.dev/projects/c1bb9739-1878-40be-b5da-6d51c8fe13ca)
+🔗 **Live Preview**: https://lovable.dev/projects/4888e55e-1803-4ebc-bc1e-0a859d4adb88
 
 ---
 
