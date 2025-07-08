@@ -1,5 +1,5 @@
 
-import { ArrowRight, CheckCircle, Sparkles, Shield, Zap, Users, TrendingUp, Calendar } from "lucide-react";
+import { ArrowRight, CheckCircle, Sparkles, Shield, Zap, Users, TrendingUp, Calendar, Star, Briefcase, Code, Target } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -10,11 +10,17 @@ const Index = () => {
       <header className="fixed top-0 left-0 right-0 z-50 glass-effect">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-                <Sparkles className="w-5 h-5 text-primary-foreground" />
+            <div className="flex items-center space-x-3">
+              <div className="relative">
+                <div className="w-10 h-10 bg-gradient-to-br from-primary via-primary/80 to-primary/60 rounded-2xl flex items-center justify-center shadow-lg shadow-primary/20">
+                  <span className="text-xl font-bold text-primary-foreground tracking-tight">Y</span>
+                </div>
+                <div className="absolute -top-1 -right-1 w-3 h-3 bg-primary rounded-full animate-pulse"></div>
               </div>
-              <span className="text-xl font-bold gradient-text">Yumi Finance</span>
+              <div className="flex flex-col">
+                <span className="text-xl font-bold gradient-text tracking-tight">Yumi</span>
+                <span className="text-xs text-secondary -mt-1">Finance</span>
+              </div>
             </div>
             <nav className="hidden md:flex items-center space-x-8">
               <a href="#how-it-works" className="text-sm hover:text-primary transition-colors">How it works</a>
@@ -202,38 +208,66 @@ const Index = () => {
             <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text">Team</h2>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <Card className="glass-effect">
+              <Card className="glass-effect hover:scale-105 transition-transform duration-300">
                 <CardContent className="p-6 text-center">
-                  <div className="w-20 h-20 bg-gradient-to-r from-primary to-primary/60 rounded-full mx-auto mb-4"></div>
+                  <div className="relative w-20 h-20 mx-auto mb-4">
+                    <div className="w-20 h-20 bg-gradient-to-br from-primary/20 to-primary/5 rounded-full flex items-center justify-center border border-primary/20">
+                      <Briefcase className="w-10 h-10 text-primary" />
+                    </div>
+                    <div className="absolute -top-1 -right-1 w-6 h-6 bg-primary rounded-full flex items-center justify-center">
+                      <Star className="w-3 h-3 text-primary-foreground" />
+                    </div>
+                  </div>
                   <h3 className="text-xl font-semibold mb-2">Mikhail</h3>
-                  <p className="text-primary mb-2">Co-Founder & CEO</p>
+                  <p className="text-primary mb-2 font-medium">Co-Founder & CEO</p>
                   <p className="text-sm text-secondary">ex. founder @ miki.digital, ex. Ooga Booga, AirCanada</p>
                 </CardContent>
               </Card>
               
-              <Card className="glass-effect">
+              <Card className="glass-effect hover:scale-105 transition-transform duration-300">
                 <CardContent className="p-6 text-center">
-                  <div className="w-20 h-20 bg-gradient-to-r from-primary to-primary/60 rounded-full mx-auto mb-4"></div>
+                  <div className="relative w-20 h-20 mx-auto mb-4">
+                    <div className="w-20 h-20 bg-gradient-to-br from-primary/20 to-primary/5 rounded-full flex items-center justify-center border border-primary/20">
+                      <Code className="w-10 h-10 text-primary" />
+                    </div>
+                    <div className="absolute -top-1 -right-1 w-6 h-6 bg-primary rounded-full flex items-center justify-center">
+                      <Zap className="w-3 h-3 text-primary-foreground" />
+                    </div>
+                  </div>
                   <h3 className="text-xl font-semibold mb-2">Vlad</h3>
-                  <p className="text-primary mb-2">Co-Founder & CTO</p>
+                  <p className="text-primary mb-2 font-medium">Co-Founder & CTO</p>
                   <p className="text-sm text-secondary">5+ year of experience building complex DeFi on EVM & TON.</p>
                 </CardContent>
               </Card>
               
-              <Card className="glass-effect">
+              <Card className="glass-effect hover:scale-105 transition-transform duration-300">
                 <CardContent className="p-6 text-center">
-                  <div className="w-20 h-20 bg-gradient-to-r from-primary to-primary/60 rounded-full mx-auto mb-4"></div>
+                  <div className="relative w-20 h-20 mx-auto mb-4">
+                    <div className="w-20 h-20 bg-gradient-to-br from-primary/20 to-primary/5 rounded-full flex items-center justify-center border border-primary/20">
+                      <Target className="w-10 h-10 text-primary" />
+                    </div>
+                    <div className="absolute -top-1 -right-1 w-6 h-6 bg-primary rounded-full flex items-center justify-center">
+                      <CheckCircle className="w-3 h-3 text-primary-foreground" />
+                    </div>
+                  </div>
                   <h3 className="text-xl font-semibold mb-2">Alex</h3>
-                  <p className="text-primary mb-2">Strategic Advisor</p>
+                  <p className="text-primary mb-2 font-medium">Strategic Advisor</p>
                   <p className="text-sm text-secondary">Co-Founder @ EVAA Protocol</p>
                 </CardContent>
               </Card>
               
-              <Card className="glass-effect">
+              <Card className="glass-effect hover:scale-105 transition-transform duration-300">
                 <CardContent className="p-6 text-center">
-                  <div className="w-20 h-20 bg-gradient-to-r from-primary to-primary/60 rounded-full mx-auto mb-4"></div>
+                  <div className="relative w-20 h-20 mx-auto mb-4">
+                    <div className="w-20 h-20 bg-gradient-to-br from-primary/20 to-primary/5 rounded-full flex items-center justify-center border border-primary/20">
+                      <Users className="w-10 h-10 text-primary" />
+                    </div>
+                    <div className="absolute -top-1 -right-1 w-6 h-6 bg-primary rounded-full flex items-center justify-center">
+                      <TrendingUp className="w-3 h-3 text-primary-foreground" />
+                    </div>
+                  </div>
                   <h3 className="text-xl font-semibold mb-2">Kevin</h3>
-                  <p className="text-primary mb-2">Strategic Advisor</p>
+                  <p className="text-primary mb-2 font-medium">Strategic Advisor</p>
                   <p className="text-sm text-secondary">Co-Founder @ Ooga Booga</p>
                 </CardContent>
               </Card>
@@ -310,11 +344,17 @@ const Index = () => {
       <footer className="py-12 bg-card">
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex items-center space-x-2 mb-4 md:mb-0">
-              <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-                <Sparkles className="w-5 h-5 text-primary-foreground" />
+            <div className="flex items-center space-x-3 mb-4 md:mb-0">
+              <div className="relative">
+                <div className="w-10 h-10 bg-gradient-to-br from-primary via-primary/80 to-primary/60 rounded-2xl flex items-center justify-center shadow-lg shadow-primary/20">
+                  <span className="text-xl font-bold text-primary-foreground tracking-tight">Y</span>
+                </div>
+                <div className="absolute -top-1 -right-1 w-3 h-3 bg-primary rounded-full animate-pulse"></div>
               </div>
-              <span className="text-xl font-bold gradient-text">Yumi Finance</span>
+              <div className="flex flex-col">
+                <span className="text-xl font-bold gradient-text tracking-tight">Yumi</span>
+                <span className="text-xs text-secondary -mt-1">Finance</span>
+              </div>
             </div>
             <div className="flex space-x-8">
               <a href="#" className="text-secondary hover:text-primary transition-colors">Privacy</a>
